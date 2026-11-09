@@ -1095,6 +1095,50 @@ html.kb-open .chat-dock .composer { margin-bottom: 2px; }
 
 }
 
+/* ---------- Work: 내 금융상품 (한눈에 · 계좌 · 주식 · 금리 비교) ---------- */
+.fin-h { display: flex; align-items: center; gap: 8px; margin: 18px 2px 8px; font-size: 15px; font-weight: 800; letter-spacing: -0.01em; }
+.fin-h:first-child { margin-top: 2px; } .fin-h .sub { font-size: 12.5px; font-weight: 600; color: var(--text-weak); }
+.fin-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.fin-kpi { padding: 14px 16px; } .fin-kpi .l { font-size: 12.5px; font-weight: 700; color: var(--text-weak); }
+.fin-kpi .v { margin-top: 4px; font-size: 20px; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.fin-kpi .s { margin-top: 2px; font-size: 12px; color: var(--text-weak); }
+.fin-kpi.neg .v { color: var(--danger); } .fin-kpi.pos .v { color: var(--acc-strong); }
+.fin-bar { margin-top: 10px; height: 8px; border-radius: 999px; background: var(--line-2); overflow: hidden; }
+.fin-bar i { display: block; height: 100%; border-radius: 999px; background: var(--blue); }
+.fin-bar.warn i { background: var(--warm-fg); } .fin-bar.over i { background: var(--danger); }
+.fin-note { padding: 12px 16px; font-size: 13.5px; line-height: 1.55; color: var(--text-sub); }
+.fin-note.warn { background: var(--warm-bg); color: var(--warm-fg); box-shadow: none; font-weight: 600; }
+.fin-note.over { background: var(--danger-bg); color: var(--danger); box-shadow: none; font-weight: 600; }
+.fin-alerts { display: grid; gap: 8px; }
+.fin-alert { display: flex; gap: 12px; align-items: flex-start; padding: 13px 16px; }
+.fin-alert .dd { flex: 0 0 auto; min-width: 54px; padding: 4px 8px; border-radius: 999px; text-align: center; font-size: 12.5px; font-weight: 800; background: var(--acc-weak); color: var(--acc-strong); }
+.fin-alert .dd.soon { background: var(--warm-bg); color: var(--warm-fg); } .fin-alert .dd.today { background: var(--danger-bg); color: var(--danger); }
+.fin-alert .t { font-weight: 700; } .fin-alert .d { margin-top: 3px; font-size: 13px; color: var(--text-sub); line-height: 1.5; }
+.fin-alert .d b { color: var(--acc-strong); }
+.fin-tw { overflow-x: auto; }
+.fin-t { width: 100%; border-collapse: collapse; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.fin-t th { text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 700; color: var(--text-weak); border-bottom: 1px solid var(--line); white-space: nowrap; }
+.fin-t td { padding: 10px 12px; border-bottom: 1px solid var(--line-2); white-space: nowrap; vertical-align: middle; }
+.fin-t tr:last-child td { border-bottom: none; }
+.fin-t .r { text-align: right; } .fin-t .w { white-space: normal; min-width: 140px; }
+.fin-t .m { font-size: 12px; color: var(--text-weak); }
+.fin-t tbody tr[data-edit] { cursor: pointer; } .fin-t tbody tr[data-edit]:hover td { background: var(--surface-2); }
+.fin-t tr.mine td { background: var(--acc-weak); } .fin-t tr.mine td:first-child { box-shadow: inset 3px 0 0 var(--blue); }
+.fin-t tfoot td { font-weight: 800; border-top: 1px solid var(--line); border-bottom: none; }
+.fin-t .neg { color: var(--danger); } .fin-t .pos { color: var(--acc-strong); } .fin-t .tax { color: var(--warm-fg); }
+.fin-tag { display: inline-block; padding: 2px 7px; border-radius: 6px; font-size: 11.5px; font-weight: 700; background: var(--surface-2); color: var(--text-sub); box-shadow: 0 0 0 1px var(--line); }
+.fin-tag.up { background: var(--acc-weak); color: var(--acc-strong); box-shadow: none; }
+.fin-empty { padding: 26px 16px; text-align: center; color: var(--text-weak); font-size: 13.5px; line-height: 1.6; }
+.fin-sel { height: 34px; padding: 0 10px; border-radius: 999px; font: inherit; font-size: 13px; font-weight: 700; color: var(--text); background: var(--surface); border: none; box-shadow: 0 0 0 1px var(--line); }
+.ib-btn.pri { background: var(--blue); color: #fff; box-shadow: none; }
+.fld select { width: 100%; height: 48px; border: 1.5px solid var(--line); border-radius: var(--r-sm); padding: 0 12px; font: inherit; font-size: 15px; color: var(--text); background: var(--surface-2); }
+.fld .hint { margin-top: 5px; font-size: 12px; color: var(--text-weak); }
+.fin-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fin-calc { margin: 4px 0 2px; padding: 12px 14px; border-radius: var(--r-sm); background: var(--surface-2); font-size: 13px; line-height: 1.7; color: var(--text-sub); font-variant-numeric: tabular-nums; }
+.fin-calc b { color: var(--text); }
+.modal-acts .del { flex: 0 0 auto; padding: 0 16px; background: var(--danger-bg); color: var(--danger); }
+.fin-meta { font-size: 12.5px; color: var(--text-weak); line-height: 1.6; padding: 12px 16px; }
+.fin-meta input { height: 32px; width: min(260px, 100%); border: 1.5px solid var(--line); border-radius: var(--r-xs); padding: 0 10px; font: inherit; font-size: 13px; background: var(--surface-2); color: var(--text); }
 </style>
 <script>
 /* 계절·시간대 테마 — <style> 직후에서 돌려 첫 페인트 전에 속성을 심는다(색 깜빡임 방지).
@@ -1180,7 +1224,13 @@ html.kb-open .chat-dock .composer { margin-bottom: 2px; }
 
   <!-- Work: 이 ANA가 하는 일의 화면. 처음엔 비어 있다 — PRD에 적은 대로 에이전트가 만든다(도메인 ANA는 여기에 자기 화면을 둔다) -->
   <section class="view" id="workView" role="tabpanel"><div class="wrap">
-    <div id="workArea"></div>
+    <div id="workArea"><div id="finWork">
+      <nav class="subtabs" data-sub="work" role="tablist" aria-label="Work"></nav>
+      <div data-subsec="overview" id="finOverview"></div>
+      <div data-subsec="accounts" id="finAccounts" hidden></div>
+      <div data-subsec="stocks" id="finStocks" hidden></div>
+      <div data-subsec="compare" id="finCompare" hidden></div>
+    </div></div>
     <div class="card work-empty" id="workEmpty">
       <!-- PRD가 없을 때: Work는 PRD에서 나오므로 PRD로 보낸다(같은 시작 버튼을 두 곳에 두지 않는다) -->
       <div data-wstate="noprd">
@@ -1443,6 +1493,12 @@ html.kb-open .chat-dock .composer { margin-bottom: 2px; }
   </div>
   <div class="modal-acts"><button class="save" data-close>Done</button></div>
 </div>
+<div class="modal" id="finModal" role="dialog" aria-modal="true" aria-labelledby="finMTitle">
+  <h3 id="finMTitle"></h3>
+  <form id="finForm" autocomplete="off"></form>
+  <div class="fin-calc" id="finCalc" hidden></div>
+  <div class="modal-acts"><button class="del" id="finDel" hidden>삭제</button><button class="cancel" data-close>취소</button><button class="save" id="finSave">저장</button></div>
+</div>
 <div class="modal confirm" id="confirmModal" role="alertdialog" aria-modal="true" aria-labelledby="cfTitle">
   <h3 id="cfTitle">Delete?</h3>
   <p class="cf-body" id="cfBody"></p>
@@ -1469,12 +1525,15 @@ const logOpen = new Set();          // 사용자가 펼쳐 둔 도구 묶음(다
 /* ================= 데이터 ================= */
 // 일 데이터(work-graph.json) — Work 화면은 처음엔 비어 있지만, 요청·지식 카드가 항목 이름을 보이고 데이터 변경 승인이 이 버전을 따른다
 let dataVersion = 0, items = [], events = [], notes = [];
+const FIN_LISTS = ['accounts', 'products', 'holdings', 'dividends', 'sales'];
+const fin = { accounts: [], products: [], holdings: [], dividends: [], sales: [] };
 const proposals = new Map();
 async function refreshData() {
   let s;
   try { s = await (await getJSON('/api/state')); } catch { return; }
   dataVersion = s.version || 1;
   items = s.items || []; events = s.events || []; notes = s.notes || [];
+  FIN_LISTS.forEach((k) => { fin[k] = s[k] || []; }); renderFin();
   (s.proposals || []).forEach((p) => proposals.set(p.id, p)); renderApprovals();
   refreshPropCards();
 }
@@ -1487,7 +1546,7 @@ function nodeOf(id) {
   if (x) return { id, kind: 'Event', x, title: x.title, label: `${mdDate(x.date)}${x.time ? ' ' + x.time : ''} · ${x.title}` };
   x = notes.find((n) => n.id === id);
   if (x) return { id, kind: 'Note', x, title: noteTitle(x), label: noteTitle(x) };
-  return null;
+  return finNode(id);
 }
 
 /* ---- Work: 처음엔 비어 있다. PRD를 보고 에이전트가 화면을 만든다 ---- */
@@ -1510,6 +1569,258 @@ Verify with the tests and a look at the page. Then update the PRD so it says wha
   post('/api/chat', { text: prompt, force: true }).then((r) => { if (!r.ok) r.json().then((e) => showErr(e.error || 'Request failed')).catch(() => {}); else openChat(); })
     .catch(() => showErr('Request failed')).finally(() => { b.disabled = false; b.textContent = orig; });
 };
+
+/* ---- Work: 내 금융상품 — 계좌·시중 상품·주식 보유·배당·매도 (work-graph.json, 서버는 finance-api.js) ----
+   이자·세금 계산은 여기서 한다. 세율·기준은 FIN_TAX 한곳에. */
+const FIN_TAX = {
+  normal: { label: '일반과세 15.4%', parts: [['이자소득세 14%', 0.14], ['지방소득세 1.4%', 'local']] },
+  preferential: { label: '세금우대 9.5%', parts: [['이자소득세 9%', 0.09], ['농어촌특별세 0.5%', 0.005]] },
+  exempt: { label: '비과세', parts: [] },
+};
+const FIN_COMPREHENSIVE = 20000000;   // 금융소득종합과세 기준(이자 + 배당, 연)
+const FIN_US_DEDUCT = 2500000, FIN_US_RATE = 0.22;   // 해외주식 양도소득 기본공제, 세율(지방세 포함)
+const FIN_KIND = { deposit: '정기예금', savings: '적금', parking: '파킹통장', cma: 'CMA' };
+const FIN_DEFAULT_ALERTS = [30, 7, 0];
+const floor10 = (n) => Math.floor(n / 10) * 10;   // 세금은 10원 미만 절사
+const won = (n) => (Number.isFinite(n) ? Math.round(n).toLocaleString('ko-KR') : '–') + '원';
+const pct = (n) => (Number.isFinite(+n) ? `${(+n).toFixed(2).replace(/\.?0+$/, '')}%` : '–');
+const finToday = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+const finDays = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / 86400e3);
+let finYear = +finToday().slice(0, 4);
+
+// 이자 세금: 이자소득세를 먼저 절사하고, 지방소득세는 그 10%를 다시 절사
+function finTax(gross, type) {
+  const t = FIN_TAX[type] || FIN_TAX.normal; let total = 0, base = 0; const parts = [];
+  for (const [label, r] of t.parts) { const v = r === 'local' ? floor10(base * 0.1) : floor10(gross * r); if (r !== 'local' && !base) base = v; parts.push([label, v]); total += v; }
+  return { total, parts };
+}
+const finMonths = (a) => (a.start && a.maturity ? Math.max(1, Math.round(finDays(a.start, a.maturity) / 30.4)) : 0);
+// 계좌 한 개의 이자: 정기예금 단리는 일수/365, 월복리는 개월. 적금은 매달 같은 금액(정액적립식). 파킹·CMA는 연 이자 추정
+function finCalc(a) {
+  const r = (+a.rate || 0) / 100, P = +a.amount || 0, m = finMonths(a), days = a.start && a.maturity ? finDays(a.start, a.maturity) : 0;
+  let principal = P, gross = 0, basis = '';
+  if (a.kind === 'deposit') {
+    if (a.compound === 'monthly') { gross = P * (Math.pow(1 + r / 12, m) - 1); basis = `${m}개월 월복리`; }
+    else { gross = P * r * days / 365; basis = `${days}일 단리`; }
+  } else if (a.kind === 'savings') {
+    principal = P * m;
+    if (a.compound === 'monthly') { for (let k = 1; k <= m; k++) gross += P * (Math.pow(1 + r / 12, k) - 1); basis = `월 ${won(P)} × ${m}개월 월복리`; }
+    else { gross = P * (r / 12) * m * (m + 1) / 2; basis = `월 ${won(P)} × ${m}개월 단리`; }
+  } else { gross = P * r; basis = '1년 유지 시 추정'; }
+  gross = Math.floor(gross);
+  const tax = finTax(gross, a.tax);
+  return { principal, gross, tax: tax.total, parts: tax.parts, net: gross - tax.total, basis, months: m, days, year: a.maturity ? +a.maturity.slice(0, 4) : null, flow: a.kind === 'parking' || a.kind === 'cma' };
+}
+const finHolding = (id) => fin.holdings.find((h) => h.id === id);
+const finRate = (h) => (h && h.market === 'US' ? 0.15 : 0.154);   // 배당 원천징수: 국내 15.4%, 미국 현지 15%(국내 추가 없음)
+// 한 해의 금융소득: 그해 만기로 받는 이자 + 파킹·CMA 1년 추정 + 그해 배당. 종합과세 판단에는 일반과세분만(세금우대·비과세는 분리과세·제외)
+function finYearSum(y) {
+  const rows = [];
+  for (const a of fin.accounts) {
+    const c = finCalc(a);
+    if (c.flow || c.year === y) rows.push({ kind: 'interest', a, label: `${a.bank || ''} ${a.name || FIN_KIND[a.kind]}`.trim(), sub: c.flow ? `${FIN_KIND[a.kind]} · 1년 추정` : `${FIN_KIND[a.kind]} · ${a.maturity} 만기`, gross: c.gross, tax: c.tax, net: c.net, counts: a.tax !== 'preferential' && a.tax !== 'exempt' });
+  }
+  for (const d of fin.dividends) {
+    if (!d.date || +d.date.slice(0, 4) !== y) continue;
+    const h = finHolding(d.holding), g = +d.amount || 0, t = floor10(g * finRate(h));
+    rows.push({ kind: 'dividend', d, label: `${h ? h.name || h.symbol : '?'} 배당`, sub: `${d.date} · ${h && h.market === 'US' ? '현지 15%' : '15.4%'}`, gross: g, tax: t, net: g - t, counts: true });
+  }
+  const sum = (k, f) => rows.filter(f || (() => true)).reduce((s, x) => s + x[k], 0);
+  const us = fin.sales.filter((x) => x.date && +x.date.slice(0, 4) === y && (finHolding(x.holding) || {}).market === 'US');
+  const usGain = us.reduce((s, x) => s + ((+x.sell || 0) - (+x.buy || 0)) * (+x.qty || 0), 0);
+  const usTaxable = Math.max(0, usGain - FIN_US_DEDUCT);
+  return { rows, gross: sum('gross'), tax: sum('tax'), net: sum('net'), counted: sum('gross', (x) => x.counts), usGain, usTaxable, usTax: floor10(usTaxable * FIN_US_RATE) };
+}
+// 만기 때 옮길 만한 상품: 같은 종류, 기간이 비슷하고(±3개월) 금리가 더 높은 것 중 가장 높은 것 (finance-api.js betterProduct와 같은 규칙)
+function finBetter(a) {
+  const m = finMonths(a);
+  return fin.products.filter((p) => p.kind === a.kind && (+p.rate || 0) > (+a.rate || 0) && (!m || !p.months || Math.abs(p.months - m) <= 3)).sort((x, y) => y.rate - x.rate)[0] || null;
+}
+function finNode(id) {
+  const a = fin.accounts.find((x) => x.id === id); if (a) return { id, kind: 'Account', x: a, title: a.name, label: `${a.bank || ''} ${a.name || ''}`.trim() };
+  const h = fin.holdings.find((x) => x.id === id); if (h) return { id, kind: 'Holding', x: h, title: h.name, label: h.name || h.symbol };
+  const p = fin.products.find((x) => x.id === id); if (p) return { id, kind: 'Product', x: p, title: p.name, label: `${p.bank} ${p.name}` };
+  return null;
+}
+const e_ = escapeHtml;
+const ddTag = (d) => `<span class="dd${d === 0 ? ' today' : d <= 7 ? ' soon' : ''}">${d === 0 ? '오늘' : 'D-' + d}</span>`;
+
+function renderFin() {
+  if (!$('finWork')) return;
+  renderFinOverview(); renderFinAccounts(); renderFinStocks(); renderFinCompare();
+  const t = finToday(), soon = fin.accounts.filter((a) => { if (!a.maturity || a.kind === 'parking' || a.kind === 'cma') return false; const d = finDays(t, a.maturity); return d >= 0 && d <= Math.max(...(a.alerts || FIN_DEFAULT_ALERTS), 0); }).length;
+  setSubCount('work', 'overview', soon);
+}
+function renderFinOverview() {
+  const t = finToday(), Y = finYearSum(finYear);
+  const alerts = fin.accounts.filter((a) => a.maturity && !finCalc(a).flow).map((a) => ({ a, d: finDays(t, a.maturity) }))
+    .filter(({ a, d }) => d >= 0 && d <= Math.max(...(a.alerts || FIN_DEFAULT_ALERTS), 0)).sort((x, y) => x.d - y.d);
+  const ratio = Y.counted / FIN_COMPREHENSIVE, lvl = ratio >= 1 ? 'over' : ratio >= 0.8 ? 'warn' : '';
+  const dep = fin.accounts.reduce((s, a) => s + finCalc(a).principal, 0);
+  const stk = fin.holdings.reduce((s, h) => s + (+h.qty || 0) * (+h.price || +h.avg || 0) * (+h.fx || 1), 0);
+  const years = [...new Set([finYear, +t.slice(0, 4), ...fin.accounts.map((a) => a.maturity && +a.maturity.slice(0, 4)), ...fin.dividends.map((d) => d.date && +d.date.slice(0, 4))].filter(Boolean))].sort();
+  $('finOverview').innerHTML = `
+    <div class="toolbar"><select class="fin-sel" id="finYearSel" aria-label="연도">${years.map((y) => `<option value="${y}"${y === finYear ? ' selected' : ''}>${y}년</option>`).join('')}</select>
+      <span class="cnt">그해 받는(받을) 이자·배당 기준</span><span class="sp"></span><button class="ib-btn pri" data-fin-add="accounts">+ 계좌</button></div>
+    ${alerts.length ? `<div class="fin-h">만기 알림</div><div class="fin-alerts">${alerts.map(({ a, d }) => { const b = finBetter(a), c = finCalc(a); return `<div class="card fin-alert" data-edit="accounts:${e_(a.id)}" role="button" tabindex="0">${ddTag(d)}<div><div class="t">${e_(`${a.bank || ''} ${a.name || FIN_KIND[a.kind]}`)} · 연 ${pct(a.rate)}</div>
+      <div class="d">${a.maturity} 만기 · 받을 돈 ${won(c.principal + c.net)} (세후 이자 ${won(c.net)})<br>${b ? `지금 더 높은 상품: <b>${e_(b.bank)} ${e_(b.name)} 연 ${pct(b.rate)}</b>${b.months ? ` · ${b.months}개월` : ''}` : '비교할 더 높은 상품이 아직 없어요 — 금리 비교에서 상품을 가져오거나 적어 두세요.'}</div></div></div>`; }).join('')}</div>` : ''}
+    <div class="fin-h">${finYear}년 금융소득</div>
+    <div class="fin-kpis">
+      <div class="card fin-kpi"><div class="l">세전 이자·배당</div><div class="v">${won(Y.gross)}</div><div class="s">${Y.rows.length}건</div></div>
+      <div class="card fin-kpi neg"><div class="l">세금</div><div class="v">${won(Y.tax)}</div><div class="s">원천징수</div></div>
+      <div class="card fin-kpi pos"><div class="l">세후</div><div class="v">${won(Y.net)}</div><div class="s">실제로 받는 돈</div></div>
+      <div class="card fin-kpi"><div class="l">종합과세 기준까지</div><div class="v">${won(Math.max(0, FIN_COMPREHENSIVE - Y.counted))}</div><div class="s">${won(Y.counted)} / 2,000만 원</div><div class="fin-bar ${lvl}"><i style="width:${Math.min(100, ratio * 100).toFixed(1)}%"></i></div></div>
+    </div>
+    ${lvl ? `<div class="card fin-note ${lvl}" style="margin-top:10px">${lvl === 'over' ? `금융소득이 2,000만 원을 넘어요(${won(Y.counted)}). 넘는 부분은 다른 소득과 합쳐 다음 해 5월 종합소득세로 신고해야 해요.` : `금융소득이 기준의 ${Math.round(ratio * 100)}%예요. 만기를 다음 해로 미루거나 세금우대·비과세 상품을 쓰면 넘지 않게 할 수 있어요.`}</div>` : ''}
+    ${Y.usGain ? `<div class="fin-h">해외주식 양도세 <span class="sub">${finYear}년 매도분</span></div>
+      <div class="fin-kpis"><div class="card fin-kpi"><div class="l">양도차익</div><div class="v">${won(Y.usGain)}</div></div><div class="card fin-kpi"><div class="l">과세표준</div><div class="v">${won(Y.usTaxable)}</div><div class="s">250만 원 공제 후</div></div>
+      <div class="card fin-kpi neg"><div class="l">양도세(22%)</div><div class="v">${won(Y.usTax)}</div><div class="s">다음 해 5월 신고</div></div></div>` : ''}
+    <div class="fin-h">내역</div>
+    <div class="card fin-tw">${Y.rows.length ? `<table class="fin-t"><thead><tr><th>항목</th><th class="r">세전</th><th class="r">세금</th><th class="r">세후</th><th>종합과세</th></tr></thead><tbody>
+      ${Y.rows.map((x) => `<tr data-edit="${x.kind === 'interest' ? 'accounts:' + e_(x.a.id) : 'dividends:' + e_(x.d.id)}"><td class="w">${e_(x.label)}<div class="m">${e_(x.sub)}</div></td><td class="r">${won(x.gross)}</td><td class="r tax">${won(x.tax)}</td><td class="r pos">${won(x.net)}</td><td>${x.counts ? '포함' : '<span class="fin-tag">분리·제외</span>'}</td></tr>`).join('')}
+      </tbody><tfoot><tr><td>합계</td><td class="r">${won(Y.gross)}</td><td class="r tax">${won(Y.tax)}</td><td class="r pos">${won(Y.net)}</td><td>${won(Y.counted)}</td></tr></tfoot></table>`
+      : `<div class="fin-empty">${finYear}년에 받는 이자·배당이 아직 없어요.<br>계좌나 배당을 추가하면 여기서 세전·세금·세후를 계산해요.</div>`}</div>
+    <div class="fin-h">자산</div>
+    <div class="fin-kpis"><div class="card fin-kpi"><div class="l">예금·적금·파킹 원금</div><div class="v">${won(dep)}</div><div class="s">${fin.accounts.length}개 계좌</div></div>
+      <div class="card fin-kpi"><div class="l">주식 평가금액</div><div class="v">${won(stk)}</div><div class="s">${fin.holdings.length}개 종목</div></div></div>`;
+  $('finYearSel').onchange = (e) => { finYear = +e.target.value; renderFinOverview(); };
+}
+function renderFinAccounts() {
+  const t = finToday(), list = fin.accounts.slice().sort((x, y) => (x.maturity || '9999').localeCompare(y.maturity || '9999'));
+  let G = 0, T = 0, N = 0;
+  const rows = list.map((a) => { const c = finCalc(a), d = a.maturity ? finDays(t, a.maturity) : null; G += c.gross; T += c.tax; N += c.net;
+    return `<tr data-edit="accounts:${e_(a.id)}"><td class="w">${e_(a.bank || '')} ${e_(a.name || '')}<div class="m">${FIN_KIND[a.kind] || ''} · ${e_((FIN_TAX[a.tax] || FIN_TAX.normal).label)}</div></td>
+      <td class="r">${won(c.principal)}${a.kind === 'savings' ? `<div class="m">월 ${won(+a.amount)}</div>` : ''}</td><td class="r">${pct(a.rate)}<div class="m">${a.compound === 'monthly' ? '월복리' : '단리'}</div></td>
+      <td>${c.flow ? '<span class="m">수시</span>' : a.maturity ? `${a.maturity}<div class="m">${d < 0 ? '만기 지남' : d === 0 ? '오늘' : 'D-' + d}</div>` : '–'}</td>
+      <td class="r">${won(c.gross)}<div class="m">${e_(c.basis)}</div></td><td class="r tax">${won(c.tax)}</td><td class="r pos">${won(c.net)}</td></tr>`; }).join('');
+  $('finAccounts').innerHTML = `<div class="toolbar"><span class="cnt">${list.length}개 계좌 · 이자는 만기까지(파킹·CMA는 1년 추정)</span><span class="sp"></span><button class="ib-btn pri" data-fin-add="accounts">+ 계좌 추가</button></div>
+    <div class="card fin-tw">${list.length ? `<table class="fin-t"><thead><tr><th>계좌</th><th class="r">원금</th><th class="r">연 이율</th><th>만기</th><th class="r">세전 이자</th><th class="r">세금</th><th class="r">세후 이자</th></tr></thead>
+      <tbody>${rows}</tbody><tfoot><tr><td colspan="4">합계</td><td class="r">${won(G)}</td><td class="r tax">${won(T)}</td><td class="r pos">${won(N)}</td></tr></tfoot></table>`
+      : '<div class="fin-empty">아직 계좌가 없어요. <b>+ 계좌 추가</b>로 예금·적금·파킹통장·CMA를 넣어 주세요.</div>'}</div>`;
+}
+function renderFinStocks() {
+  let V = 0, P = 0;
+  const hs = fin.holdings.map((h) => { const fx = +h.fx || 1, cur = (+h.price || 0) * fx, cost = (+h.avg || 0) * fx, q = +h.qty || 0, val = q * (cur || cost), pl = h.price ? (cur - cost) * q : 0; V += val; P += pl;
+    return `<tr data-edit="holdings:${e_(h.id)}"><td class="w">${e_(h.name || h.symbol)}<div class="m">${e_(h.symbol || '')} · ${h.market === 'US' ? '해외' : '국내'}</div></td><td class="r">${q.toLocaleString('ko-KR')}</td>
+      <td class="r">${(+h.avg || 0).toLocaleString('ko-KR')}${h.currency && h.currency !== 'KRW' ? ' ' + e_(h.currency) : ''}</td><td class="r">${h.price ? (+h.price).toLocaleString('ko-KR') : '–'}<div class="m">${h.priceAt ? h.priceAt.slice(5, 16).replace('T', ' ') : '아직 안 가져옴'}</div></td>
+      <td class="r">${won(val)}</td><td class="r ${pl < 0 ? 'neg' : 'pos'}">${h.price ? won(pl) : '–'}<div class="m">${h.price && cost ? pct((cur / cost - 1) * 100) : ''}</div></td></tr>`; }).join('');
+  const divs = fin.dividends.slice().sort((x, y) => (y.date || '').localeCompare(x.date || '')).map((d) => { const h = finHolding(d.holding), g = +d.amount || 0, t = floor10(g * finRate(h));
+    return `<tr data-edit="dividends:${e_(d.id)}"><td>${e_(d.date || '')}</td><td class="w">${e_(h ? h.name || h.symbol : '?')}</td><td class="r">${won(g)}</td><td class="r tax">${won(t)}<div class="m">${h && h.market === 'US' ? '현지 15%' : '15.4%'}</div></td><td class="r pos">${won(g - t)}</td></tr>`; }).join('');
+  const sales = fin.sales.slice().sort((x, y) => (y.date || '').localeCompare(x.date || '')).map((x) => { const h = finHolding(x.holding), gain = ((+x.sell || 0) - (+x.buy || 0)) * (+x.qty || 0);
+    return `<tr data-edit="sales:${e_(x.id)}"><td>${e_(x.date || '')}</td><td class="w">${e_(h ? h.name || h.symbol : '?')}<div class="m">${h && h.market === 'US' ? '해외 — 양도세 대상' : '국내 — 소액주주 비과세'}</div></td><td class="r">${(+x.qty || 0).toLocaleString('ko-KR')}</td><td class="r ${gain < 0 ? 'neg' : 'pos'}">${won(gain)}</td></tr>`; }).join('');
+  const Y = finYearSum(finYear);
+  $('finStocks').innerHTML = `<div class="toolbar"><span class="cnt">평가 ${won(V)} · 손익 ${won(P)}</span><span class="sp"></span><button class="ib-btn" id="finRefresh2">주가 가져오기</button><button class="ib-btn pri" data-fin-add="holdings">+ 종목</button></div>
+    <div class="card fin-tw">${hs ? `<table class="fin-t"><thead><tr><th>종목</th><th class="r">수량</th><th class="r">평균 매수가</th><th class="r">현재가</th><th class="r">평가금액(원)</th><th class="r">평가손익</th></tr></thead><tbody>${hs}</tbody></table>` : '<div class="fin-empty">보유 종목이 없어요. <b>+ 종목</b>으로 넣으면 주가를 하루 한 번 가져와요.</div>'}</div>
+    <div class="fin-h">배당 <span class="sub">세전 금액(원) · 종합과세 계산에 들어가요</span><span class="sp" style="flex:1"></span><button class="ib-btn" data-fin-add="dividends"${fin.holdings.length ? '' : ' disabled'}>+ 배당</button></div>
+    <div class="card fin-tw">${divs ? `<table class="fin-t"><thead><tr><th>받은 날</th><th>종목</th><th class="r">세전</th><th class="r">세금</th><th class="r">세후</th></tr></thead><tbody>${divs}</tbody></table>` : '<div class="fin-empty">배당 기록이 없어요.</div>'}</div>
+    <div class="fin-h">매도 <span class="sub">${finYear}년 해외 양도세 ${won(Y.usTax)}</span><span class="sp" style="flex:1"></span><button class="ib-btn" data-fin-add="sales"${fin.holdings.length ? '' : ' disabled'}>+ 매도</button></div>
+    <div class="card fin-tw">${sales ? `<table class="fin-t"><thead><tr><th>날짜</th><th>종목</th><th class="r">수량</th><th class="r">양도차익</th></tr></thead><tbody>${sales}</tbody></table>` : '<div class="fin-empty">매도 기록이 없어요. 해외주식을 팔면 적어 두세요 — 한 해 차익에서 250만 원을 빼고 22%로 계산해요.</div>'}</div>`;
+  $('finRefresh2').onclick = () => finRefresh($('finRefresh2'));
+}
+let finCmpKind = 'deposit', finCmpMonths = 12, finMeta = null;
+function renderFinCompare() {
+  const kind = finCmpKind, M = finCmpMonths;
+  const prods = fin.products.filter((p) => p.kind === kind && (!M || !p.months || p.months === M)).map((p) => ({ p, rate: +p.rate || 0 }));
+  const mine = fin.accounts.filter((a) => a.kind === kind && (!M || kind === 'parking' || kind === 'cma' || Math.abs(finMonths(a) - M) <= 3)).map((a) => ({ a, rate: +a.rate || 0 }));
+  const top = Math.max(0, ...mine.map((x) => x.rate));
+  const all = prods.concat(mine).sort((x, y) => y.rate - x.rate).slice(0, 200);
+  const months = [...new Set(fin.products.filter((p) => p.kind === kind).map((p) => p.months).filter(Boolean).concat([6, 12, 24, 36]))].sort((x, y) => x - y);
+  const m = finMeta || {};
+  $('finCompare').innerHTML = `<div class="toolbar"><select class="fin-sel" id="finCmpKind">${Object.entries(FIN_KIND).map(([k, l]) => `<option value="${k}"${k === kind ? ' selected' : ''}>${l}</option>`).join('')}</select>
+      ${kind === 'deposit' || kind === 'savings' ? `<select class="fin-sel" id="finCmpM"><option value="0"${!M ? ' selected' : ''}>모든 기간</option>${months.map((x) => `<option value="${x}"${x === M ? ' selected' : ''}>${x}개월</option>`).join('')}</select>` : ''}
+      <span class="cnt">${prods.length}개 상품</span><span class="sp"></span><button class="ib-btn" id="finRefresh">지금 가져오기</button><button class="ib-btn pri" data-fin-add="products">+ 상품 직접</button></div>
+    <div class="card fin-tw">${all.length ? `<table class="fin-t"><thead><tr><th>#</th><th>은행 · 상품</th><th class="r">기본 금리</th><th class="r">최고 금리</th><th>기간</th><th></th></tr></thead><tbody>
+      ${all.map((x, i) => x.a ? `<tr class="mine" data-edit="accounts:${e_(x.a.id)}"><td>${i + 1}</td><td class="w">${e_(x.a.bank || '')} ${e_(x.a.name || '')}<div class="m">내 계좌${x.a.maturity ? ' · ' + x.a.maturity + ' 만기' : ''}</div></td><td class="r"><b>${pct(x.rate)}</b></td><td class="r">–</td><td>${finMonths(x.a) ? finMonths(x.a) + '개월' : '–'}</td><td><span class="fin-tag">내 계좌</span></td></tr>`
+        : `<tr data-edit="products:${e_(x.p.id)}"><td>${i + 1}</td><td class="w">${e_(x.p.bank)} ${e_(x.p.name)}<div class="m">${x.p.source === 'fss' ? '금융감독원' : '직접 입력'}${x.p.at ? ' · ' + x.p.at.slice(0, 10) : ''}</div></td><td class="r"><b>${pct(x.rate)}</b></td><td class="r">${x.p.maxRate ? pct(x.p.maxRate) : '–'}</td><td>${x.p.months ? x.p.months + '개월' : '–'}</td><td>${mine.length && x.rate > top ? `<span class="fin-tag up">+${(x.rate - top).toFixed(2)}%p</span>` : ''}</td></tr>`).join('')}
+      </tbody></table>` : `<div class="fin-empty">이 조건의 상품이 아직 없어요.<br>${m.hasKey ? '<b>지금 가져오기</b>를 누르거나' : '금융감독원 인증키를 넣으면 자동으로 모아 와요. 그 전에는'} <b>+ 상품 직접</b>으로 적어 두세요.</div>`}</div>
+    <div class="card fin-meta" style="margin-top:10px">자동 갱신: 하루 한 번(금리·주가·환율)${m.lastAt ? ` · 마지막 ${e_(m.lastAt.slice(0, 16).replace('T', ' '))}` : ''}${m.log ? `<br>주가: ${e_(m.log.prices || '–')} · 금리: ${e_(m.log.rates || '–')}` : ''}
+      <br>금융감독원 '금융상품 한눈에' 인증키: ${m.hasKey ? '등록됨' : '없음'} <input id="finKey" placeholder="인증키 붙여넣기" aria-label="인증키"> <button class="ib-btn" id="finKeySave">저장</button>
+      <br><span>인증키는 finlife.fss.or.kr › 오픈 API에서 무료로 받을 수 있어요.</span></div>`;
+  $('finCmpKind').onchange = (e) => { finCmpKind = e.target.value; renderFinCompare(); };
+  if ($('finCmpM')) $('finCmpM').onchange = (e) => { finCmpMonths = +e.target.value; renderFinCompare(); };
+  $('finRefresh').onclick = () => finRefresh($('finRefresh'));
+  $('finKeySave').onclick = async () => { const k = $('finKey').value.trim(); if (!k) return; await post('/api/fin/settings', { fssKey: k }); await finLoadMeta(); finRefresh($('finRefresh')); };
+}
+async function finLoadMeta() { try { finMeta = await getJSON('/api/fin/meta'); } catch {} renderFinCompare(); }
+async function finRefresh(b) {
+  const orig = b.textContent; b.disabled = true; b.textContent = '가져오는 중…';
+  try { const r = await post('/api/fin/refresh', {}); const j = await r.json(); if (!r.ok) showErr(j.error || '가져오기 실패'); } catch { showErr('가져오기 실패'); }
+  b.disabled = false; b.textContent = orig; finLoadMeta();
+}
+
+// 추가·수정 폼 — 목록마다 칸
+const FIN_FORM = {
+  accounts: { title: '계좌', fields: [
+    ['kind', '종류', 'select', FIN_KIND], ['bank', '은행', 'text'], ['name', '상품명', 'text'],
+    ['amount', '금액(원)', 'num', null, '정기예금·파킹은 원금(잔액), 적금은 월 납입액'], ['rate', '연 이율(%)', 'num'],
+    ['compound', '이자 방식', 'select', { simple: '단리', monthly: '월복리' }], ['tax', '과세', 'select', { normal: FIN_TAX.normal.label, preferential: FIN_TAX.preferential.label, exempt: FIN_TAX.exempt.label }],
+    ['start', '가입일', 'date'], ['maturity', '만기일', 'date', null, '파킹통장·CMA는 비워 두세요'],
+    ['alerts', '알림(만기 며칠 전)', 'text', null, '쉼표로 — 기본 30, 7, 0(당일)'], ['memo', '메모', 'text']] },
+  products: { title: '시중 상품', fields: [['kind', '종류', 'select', FIN_KIND], ['bank', '은행', 'text'], ['name', '상품명', 'text'], ['months', '기간(개월)', 'num'], ['rate', '기본 금리(%)', 'num'], ['maxRate', '최고 금리(%)', 'num']] },
+  holdings: { title: '주식 종목', fields: [['market', '시장', 'select', { KR: '국내', US: '해외' }], ['symbol', '종목 코드', 'text', null, '국내는 6자리(005930), 해외는 티커(AAPL)'], ['name', '이름', 'text'], ['qty', '수량', 'num'], ['avg', '평균 매수가(현지 통화)', 'num']] },
+  dividends: { title: '배당', fields: [['holding', '종목', 'holding'], ['date', '받은 날', 'date'], ['amount', '세전 배당금(원)', 'num', null, '해외는 원화로 환산한 금액'], ['memo', '메모', 'text']] },
+  sales: { title: '매도', fields: [['holding', '종목', 'holding'], ['date', '매도일', 'date'], ['qty', '수량', 'num'], ['buy', '1주 매수가(원)', 'num', null, '해외는 매수일 환율로 환산'], ['sell', '1주 매도가(원)', 'num', null, '해외는 매도일 환율로 환산'], ['memo', '메모', 'text']] },
+};
+let finEdit = null;   // {list, id}
+function openFinForm(list, id) {
+  const spec = FIN_FORM[list], x = id ? fin[list].find((y) => y.id === id) : null; if (!spec || (id && !x)) return;
+  finEdit = { list, id: x ? id : null };
+  const v = x || (list === 'accounts' ? { kind: 'deposit', compound: 'simple', tax: 'normal', start: finToday() } : list === 'holdings' ? { market: 'KR' } : list === 'products' ? { kind: finCmpKind, months: finCmpMonths || '' } : { date: finToday(), holding: (fin.holdings[0] || {}).id });
+  $('finMTitle').textContent = `${spec.title} ${x ? '수정' : '추가'}`;
+  $('finForm').innerHTML = spec.fields.map(([k, label, type, opts, hint]) => {
+    let val = v[k]; if (k === 'alerts') val = (val || FIN_DEFAULT_ALERTS).join(', ');
+    const id_ = `finF-${k}`, attr = `id="${id_}" name="${k}"`;
+    const input = type === 'select' ? `<select ${attr}>${Object.entries(opts).map(([o, l]) => `<option value="${o}"${o === val ? ' selected' : ''}>${e_(l)}</option>`).join('')}</select>`
+      : type === 'holding' ? `<select ${attr}>${fin.holdings.map((h) => `<option value="${e_(h.id)}"${h.id === val ? ' selected' : ''}>${e_(h.name || h.symbol)}</option>`).join('')}</select>`
+      : `<input ${attr} type="${type === 'num' ? 'number' : type}"${type === 'num' ? ' step="any" inputmode="decimal"' : ''} value="${val == null ? '' : e_(String(val))}">`;
+    return `<div class="fld"><label for="${id_}">${label}</label>${input}${hint ? `<div class="hint">${hint}</div>` : ''}</div>`;
+  }).join('');
+  $('finDel').hidden = !x;
+  $('finForm').oninput = finPreview; finPreview();
+  openModal('finModal');
+}
+function finFormItem() {
+  const o = {}; for (const el of $('finForm').elements) if (el.name) o[el.name] = el.value.trim();
+  return o;
+}
+function finPreview() {
+  const box = $('finCalc'); if (!finEdit || finEdit.list !== 'accounts') { box.hidden = true; return; }
+  const a = finFormItem(); a.amount = +a.amount; a.rate = +a.rate;
+  if (!a.amount || !a.rate) { box.hidden = true; return; }
+  const c = finCalc(a); box.hidden = false;
+  box.innerHTML = `${c.flow ? '1년 유지 시' : '만기 때'} 세전 이자 <b>${won(c.gross)}</b> (${e_(c.basis)})<br>${c.parts.length ? c.parts.map(([l, n]) => `${l} ${won(n)}`).join(' · ') : '세금 없음'}<br>세후 이자 <b>${won(c.net)}</b>${c.flow ? '' : ` · 받을 돈 <b>${won(c.principal + c.net)}</b>`}`;
+}
+$('finSave').onclick = async () => {
+  if (!finEdit) return;
+  const b = $('finSave'); b.disabled = true;
+  try {
+    const r = await post('/api/fin', { list: finEdit.list, action: finEdit.id ? 'update' : 'add', id: finEdit.id, item: finFormItem() });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) { showErr(j.error || '저장 실패'); return; }
+    closeModal(); refreshData();
+  } catch { showErr('저장 실패'); } finally { b.disabled = false; }
+};
+$('finDel').onclick = async () => {
+  if (!finEdit || !finEdit.id) return;
+  const x = fin[finEdit.list].find((y) => y.id === finEdit.id);
+  if (!(await confirmDelete(`${FIN_FORM[finEdit.list].title} '${(x && (x.name || x.symbol || x.date)) || ''}'${finEdit.list === 'holdings' ? ' (배당·매도 기록도 함께)' : ''}`))) return;
+  const r = await post('/api/fin', { list: finEdit.list, action: 'remove', id: finEdit.id });
+  if (!r.ok) { showErr('삭제 실패'); return; }
+  closeModal(); refreshData();
+};
+$('finWork').addEventListener('click', (e) => {
+  const add = e.target.closest('[data-fin-add]'); if (add) return openFinForm(add.dataset.finAdd);
+  const ed = e.target.closest('[data-edit]'); if (ed) { const [l, id] = ed.dataset.edit.split(':'); openFinForm(l, id); }
+});
+$('finWork').addEventListener('keydown', (e) => { if (e.key === 'Enter' && e.target.matches('[data-edit][role="button"]')) e.target.click(); });
+// 요청 카드의 계좌 칩 → Work › 계좌에서 그 계좌를 연다
+document.addEventListener('click', (e) => {
+  const c = e.target.closest('.rel[data-go]'); if (!c) return;
+  const n = finNode(c.dataset.go); if (!n) return;
+  const list = n.kind === 'Account' ? 'accounts' : n.kind === 'Holding' ? 'holdings' : 'products';
+  showTab('work'); openSub('work', list === 'accounts' ? 'accounts' : list === 'holdings' ? 'stocks' : 'compare'); openFinForm(list, n.id);
+});
+finLoadMeta();
 
 /* ---- 요청 (에이전트 → 사용자) ----
    에이전트가 이 시스템을 더 잘 운용하려고 사용자에게 부탁하는 것. 답은 채팅으로 에이전트에게 전달된다. */
@@ -1737,6 +2048,7 @@ var SUBTABS = {
   prd: [['current', 'Current'], ['history', 'History']],
   knowledge: [['ontology', 'Ontology'], ['graph', 'Graph'], ['documents', 'Documents']],
   update: STATUS_TABS,
+  work: [['overview', '한눈에'], ['accounts', '계좌'], ['stocks', '주식'], ['compare', '금리 비교']],
 };
 var subSel = {}; try { subSel = JSON.parse(localStorage.getItem('ana-subtabs') || '{}') || {}; } catch {}
 var subCounts = {};

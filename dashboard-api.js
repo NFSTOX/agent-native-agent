@@ -20,6 +20,7 @@ const relgraph = require('./graph-index.js');   // 업무 항목·지식·문서
 const codexSettings = require('./codex-settings.js');
 const permissionMode = require('./permission-mode.js');
 const { createAgentLog } = require('./agent-log.js');
+const { createFinance } = require('./finance-api.js');   // 내 금융상품: 계좌·시중 상품·주식 — 금리·주가 가져오기, 만기 알림
 
 function createDashboardApi(core, opts) {
   const { ROOT } = opts;
@@ -461,6 +462,11 @@ function createDashboardApi(core, opts) {
     return out;
   }
 
+  // ---- 내 금융상품 (finance-api.js) ----
+  const finance = createFinance({ loadData, saveData, loadRequests, saveRequests, audit, plainFields, curWs,
+    metaFile: opts.FINANCE_FILE || path.join(path.dirname(EVOLVE_FILE), 'finance.json') });
+  if (opts.FINANCE_AUTO !== false && !process.env.ANA_TEST) finance.start();
+
   // ---- 라우트 ----
   const extraApi = (req, res, url, ctx) => routes(req, res, url, ctx);
   async function routes(req, res, url, ctx) {
@@ -617,6 +623,8 @@ function createDashboardApi(core, opts) {
       return sendJson(res, 200, { ...s, workspace: ws, graph: g,
         proposals: ps.proposals.filter((x) => x.status === 'pending' && (x.ws || DEFAULT_WS) === ws).slice(-50) }), true;
     }
+
+    if (p.startsWith('/api/fin') && await finance.route(req, res, p, { csrfOk, jsonBody, sendJson, actor, broadcast })) return true;
 
     // ---- 그래프(NodeRel) ----
     // 읽기: 이웃·추적·AI 스키마. 쓰기는 업무 연결은 /api/link, 지식은 /api/knowledge — 원천을 고치면 다음 읽기에 그대로 보인다.
